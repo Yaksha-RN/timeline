@@ -4,19 +4,27 @@
     font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
 }
 
-.container {
-    color: rgb(0, 213, 255);
-    height: 30vw;
-    width: 22vw;
-    padding: 20px;
-    border: 2px solid transparent;
+.main-container {
+    position: relative;
+    height: 32vw;
+    width: 24vw;
+    padding: 0px;
     background-clip: border-box;
     border-radius: 10px;
-    background-color: rgba(255, 255, 255, 0.2);
-    backdrop-filter: blur(10px);
-    z-index: 1;
-    position: relative;
+}
+
+.container {
+    position: absolute;
     cursor: pointer;
+    height: 100%;
+    width: 100%;
+    z-index: 1;
+    transform-style: preserve-3d;
+    transition: all 1s ease-in-out;
+}
+
+.container:hover {
+    transform: rotateY(180deg);
 }
 
 .container img {
@@ -24,11 +32,35 @@
     border-radius: 50%;
 }
 
-.container h2 {
+.front-card {
+    position: absolute;
+    padding: 20px;
+    border: 2px solid transparent;
+    background-clip: border-box;
+    border-radius: 10px;
+    background-color: rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(10px);
+    backface-visibility: hidden;
+}
+
+.front-card h2 {
     font-weight:900;
+    color: rgb(0, 213, 255);
     padding: 5px 0px 10px;
 }
 
-.container h3,h4 {
-    color: white;
+.back-card {
+    position: absolute;
+    padding: 20px;
+    border: 2px solid transparent;
+    background-clip: border-box;
+    border-radius: 10px;
+    background-color: rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(10px);
+    backface-visibility: hidden;
+    transform: rotateY(180deg);
+}
+
+.back-card img {
+    transform: rotateY(180deg);
 }
