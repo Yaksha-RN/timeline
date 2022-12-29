@@ -63,4 +63,5 @@
 
 .back-card img {
     transform: rotateY(180deg);
+    padding-bottom: 24px;
 }
